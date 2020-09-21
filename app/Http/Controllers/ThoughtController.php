@@ -32,6 +32,8 @@ class ThoughtController extends Controller
         $thought->description = $request->description;
         $thought->user_id = auth()->id();
         $thought->save();
+
+        return $thought;
     }
 
     

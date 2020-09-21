@@ -16,8 +16,11 @@ class CreateThoughtsTable extends Migration
         Schema::create('thoughts', function (Blueprint $table) {
             $table->id();
             $table->string('description');
-            $table->foreignId('user_id')->constrained();
             $table->timestamps();
+        });
+        
+        Schema::table('thoughts', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained();
         });
     }
 
